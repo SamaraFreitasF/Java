@@ -2,13 +2,18 @@ package school.sptech;
 
 public class Exercicio04 {
     public static void main(String[] args) {
-        // Números Pares
+        //  Cálculo de Média
 
-        Integer NumerosPares = 0;
+        String nome = "Samara";
+        Float nota1 = 10f;
+        Float nota2 = 8f;
 
-        while(NumerosPares <= 40){
-            System.out.println(NumerosPares);
-            NumerosPares++;
-        }
+        Float media = (nota1 + nota2) / 2;
+
+        String mensagem = ("Olá, %s. Sua média foi de %.2f");
+
+        System.out.println(mensagem.formatted(nome, media));
+
+
     }
 }

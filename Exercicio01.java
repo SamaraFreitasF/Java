@@ -1,32 +1,29 @@
 package school.sptech;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 public class Exercicio01 {
     public static void main(String[] args) {
-    // Loteria
 
-        Integer sorteado = 5;
-        Integer cont = 0;
-        Integer numeroAleatorio;
+        //Cálculo de Renda
 
-        System.out.printf("Número apostado: %d%n", sorteado);
+        //Quantidade de Filhos
+        Integer crianca = 2; // 0 a 3 anos
+        Integer adolescente = 2; // 4 a 16 anos
+        Integer adulto = 1; // 17 a 18 anos
 
-        do {
-            numeroAleatorio = ThreadLocalRandom.current().nextInt(0, 11);
-            System.out.println(numeroAleatorio);
-            cont++;
-        }
-        while(sorteado != numeroAleatorio);
+        //Quantidade total de Filhos
+        Integer totalFilhos = crianca + adolescente + adulto;
 
+        //Valores da bolsa
+        Float bolsaCrianca = 25.12f; //0 a 3 anos
+        Float bolsaAdolescente = 15.88f; //4 a 16 anos
+        Float bolsaAdulto = 12.44f; // 17 a 18 anos
 
-        if(cont <= 3){
-            System.out.println("Você é MUITO sortudo");
-        } else if (cont <=10) {
-            System.out.println("Você é sortudo");
-        } else {
-            System.out.println("É melhor você parar de apostar e ir trabalhar");
-        }
-        System.out.printf("Quantidade de vezes apostadas: %d%n", cont);
+        //Valor total da bolsa
+        Float bolsaFilhos = (crianca * bolsaCrianca) + (adolescente * bolsaAdolescente) + (adulto * bolsaAdulto);
+
+        String mensagem  = ("Você tem um total de %d filhos e vai receber R$ %.2f de bolsa");
+
+        System.out.println(mensagem.formatted(totalFilhos, bolsaFilhos));
+
     }
 }
